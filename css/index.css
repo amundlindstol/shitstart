@@ -18,6 +18,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-content: space-between;
+    flex-wrap: wrap;
 }
 
 /** a needs to be changed to class*/
@@ -35,7 +36,6 @@ img {
 
 #link-item {
     --scale-value: 1;
-
     width: 100px;
     height: 100px;
     background-color: #FFF;

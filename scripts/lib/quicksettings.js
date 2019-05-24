@@ -797,7 +797,10 @@
             var colorLabel = createElement("label", null, "qs_color_label", container);
             colorLabel.setAttribute("for", id);
             colorLabel.style.backgroundColor = colorInput.value;
-
+            if (title.startsWith('bg color') || title.startsWith('ico color')) {
+                colorLabel.style.backgroundColor = color;
+            }
+            console.log(colorLabel);
             this._controls[title] = {
                 container: container,
                 control: colorInput,
@@ -816,7 +819,6 @@
                     }
                 }
             };
-
             var self = this;
             colorInput.addEventListener("input", function () {
                 label.innerHTML = "<b>" + title + ":</b> " + colorInput.value;
