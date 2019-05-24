@@ -31,7 +31,7 @@ a {
     height: auto;
 }
 a:hover {
-    background-color: inherit;
+    background-color: none;
 }
 
 img {
