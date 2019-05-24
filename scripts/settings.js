@@ -28,7 +28,9 @@ var controller = {
     },
     onClick: function() {
         let s = settings.getValue('url');
-        localStorage.setItem(0, JSON.stringify(makeNewLink(s)));
+        let newLink = makeNewLink(s);
+        localStorage.setItem(0, JSON.stringify(newLink));
+        newLink.icobox.style.backgroundColor = document.getElementsByName('ico-box')[0].style.backgroundColor;
     },
     onTitle: function(value) {
         document.getElementById('title').innerHTML = value;
@@ -38,12 +40,12 @@ var controller = {
 require(["lib/quicksettings"], function (QuickSettings) {
     QuickSettings.useExtStyleSheet();
     settings = QuickSettings.create(10, 10, "Settings")
-        .addText("url", "https://www.", function(value) {})
+        .addText("url", "", function(value) {})
         .addButton("add", controller.onClick)
         .addRange("columns", 1, 10, 5, 1, function(value) {})
         .addColor("bg color", document.body.style.backgroundColor, controller.onBgColor)
         .addColor("ico color", document.body.style.backgroundColor, controller.onIcoColor)
-        .addText("title", "Start", controller.onTitle)
+        .addText("title", "shit start", controller.onTitle)
         .addDropDown("font", fonts, controller.onFont)
         .saveInLocalStorage('storedsettings');
 });

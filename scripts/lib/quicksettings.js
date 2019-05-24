@@ -1439,7 +1439,6 @@
             var container = this._createContainer();
             var label = createLabel("<b>" + title + "</b>", container);
             var textInput;
-
             if (type === "textarea") {
                 textInput = createElement("textarea", getNextID(), "qs_textarea", container);
                 textInput.rows = 5;

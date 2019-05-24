@@ -4,7 +4,7 @@ class LinkElem {
         if (!href.startsWith("https://")) {href = "https://"+href;}
         this.href = href;
         this.position = position;
-        this.updateDocument(position);
+        return this.updateDocument(position);
     }
 
     ico(href) {
@@ -25,5 +25,8 @@ class LinkElem {
             linkBox.insertBefore(icobox, linkBox.children[this.position]);} 
         else {
             linkBox.appendChild(icobox);}
+        this.ico = ico;
+        this.icobox = icobox;
+        return this;
     }
 }
